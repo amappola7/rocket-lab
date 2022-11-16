@@ -1,15 +1,3 @@
-@use './components/styles/globals';
-
-div {
-  font-family: globals.$font-family;
-  color: globals.$color-text;
-}
-
-h2 {
-  font-size: 2.5rem;
-
-}
-
 .subtitle {
   font-size: 2.4rem;
   font-weight: 700;

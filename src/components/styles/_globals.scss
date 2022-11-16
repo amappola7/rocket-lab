@@ -3,10 +3,16 @@ $color-text: #5A5A5A;
 
 html {
   font-size: 62.5%;
+  font-family: $font-family;
+  color: $color-text;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 3.1rem;
 }

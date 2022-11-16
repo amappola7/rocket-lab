@@ -7,4 +7,32 @@ div {
 
 h2 {
   font-size: 2.5rem;
+
+}
+
+.subtitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.status-capsules__container {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4.4rem;
+  font-size: 1.6rem;
+  color: white;
+
+  .status-capsules__capsule--activate {
+    background:linear-gradient(135deg, #CE9FFC 0%,#7367F0 100%);
+  }
+
+  .status-capsules__capsule--destroyed {
+    background:linear-gradient(135deg, #65799b 0%,#5e2563 100%);
+  }
+
+  .status-capsules__capsule--unknown {
+    background:linear-gradient(135deg, #7117ea 0%,#ea6060 100%);
+  }
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import './styles/Capsules.scss';
 
-export default function Capsules() {
+export default function Capsules(props) {
   return (
       <section className='capsules'>
         <h5 className='capsules__title'>
-          C100
+          {props.serial}
           <img src="src/assets/rocketActive.svg" alt="status rocket" />
         </h5>
-        <p className='capsules__description'>Description rocket and history</p>
+        <p className='capsules__description'>{props.details}</p>
       </section>
   )
 }

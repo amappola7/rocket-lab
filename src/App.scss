@@ -1,4 +1,5 @@
 .subtitle {
+  margin-top: 1rem;
   font-size: 2.4rem;
   font-weight: 700;
 }
@@ -24,4 +25,10 @@
   .status-capsules__capsule--unknown {
     background:linear-gradient(135deg, #7117ea 0%,#ea6060 100%);
   }
+}
+
+.capsule__container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

@@ -25,6 +25,7 @@ function App() {
 
   return (
     <Fragment>
+      <Header />
       <section className="status-capsules">
         <h2 className="subtitle status-capsules__title">Capsules status:</h2>
         <div className="status-capsules__container">
@@ -45,10 +46,10 @@ function App() {
           />
         </div>
       </section>
-      <section className="capsule">
+      <section className="capsule" id="capsule">
         <h2 className="subtitle capsule__title">All Capsules:</h2>
         <div className="capsule__container">
-          {capsules.map(capsule => <Capsules serial={capsule.capsule_serial} description={capsule.details} status={capsule.status}/>)}
+          {capsules.map(capsule => <Capsules key={capsule.capsule_serial} serial={capsule.capsule_serial} description={capsule.details} status={capsule.status}/>)}
         </div>
       </section>
       <Footer />

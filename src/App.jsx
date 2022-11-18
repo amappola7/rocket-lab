@@ -8,35 +8,20 @@ import "./components/styles/_globals.scss";
 import axios from "axios";
 
 function App() {
-  // const [capsules, setCapsules] = useState([]);
+  const [capsules, setCapsules] = useState([]);
 
-  //   useEffect( () => {
-  //     async function getDataApi() {
-  //       try {
-  //         const response = await axios.get('https://api.spacexdata.com/v3/capsules')
-  //         const data = response.data.map((capsule) => {
-  //           <Capsules serial={capsule.capsule_serial} details={capsule.details} status={capsule.status}/>
-  //         })
-  //       } catch (error) {
-  //         console.log('ERROR API', error);
-  //       }
-  //     }
-  //       getDataApi();
-  // }, []);
-
+  useEffect( () => {
     async function getDataApi() {
       try {
         const response = await axios.get('https://api.spacexdata.com/v3/capsules')
-        const data = response.data.map((capsule) => {
-          <Capsules serial={capsule.capsule_serial} details={capsule.details} status={capsule.status}/>
-        })
+        const data = response.data.map((capsule) => capsule)
+        setCapsules(data)
       } catch (error) {
         console.log('ERROR API', error);
       }
     }
-
     getDataApi();
-  // console.log('VALUES', Object.entries(capsules));
+  }, []);
 
   return (
     <Fragment>
@@ -63,7 +48,7 @@ function App() {
       <section className="capsule">
         <h2 className="subtitle capsule__title">All Capsules:</h2>
         <div className="capsule__container">
-          {/* {getDataApi()} */}
+          {capsules.map(capsule => <Capsules serial={capsule.capsule_serial} description={capsule.details} status={capsule.status}/>)}
         </div>
       </section>
       <Footer />
